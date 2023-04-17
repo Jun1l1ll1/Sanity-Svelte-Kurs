@@ -1,7 +1,9 @@
 <script>
-
-    let icecreams = ['Strawberry Ice Cream', 'Pinup'];
-
+    // START New stuff
+    export let data;
+    
+    let icecreams = data.icecreams;
+    // END New stuff
 </script>
 
 <div id="header">
@@ -14,7 +16,9 @@
         {#each icecreams as i_cream}
         <div class="grid_element">
             <img src="" alt="">
-            <h3>{i_cream}</h3>
+            <!-- START New stuff -->
+            <h3>{i_cream.i_name}</h3>
+            <!-- END New stuff -->
         </div>
         {/each}
     </div>
