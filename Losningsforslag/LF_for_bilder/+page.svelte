@@ -1,7 +1,13 @@
 <script>
+    export let data;
+    
+    let icecreams = data.icecreams;
 
-    let icecreams = ['Strawberry Ice Cream', 'Pinup'];
-
+    // START New stuff
+    function urlFor(source) {
+        return data.builder.image(source);
+    }
+    // END New stuff
 </script>
 
 <div id="header">
@@ -13,8 +19,10 @@
     <div class="grid">
         {#each icecreams as i_cream}
         <div class="grid_element">
-            <img src="" alt="">
-            <h3>{i_cream}</h3>
+            <!-- START New stuff -->
+            <img src="{urlFor(i_cream.i_img.asset._ref).url()}" alt="">
+            <!-- END New stuff -->
+            <h3>{i_cream.i_name}</h3>
         </div>
         {/each}
     </div>
